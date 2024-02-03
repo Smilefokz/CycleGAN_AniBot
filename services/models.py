@@ -8,7 +8,7 @@ from services.blocks import ResidualBlock
 # --------------------- Класс Discriminator для CycleGAN ---------------------
 class Discriminator(nn.Module):
 
-    def __init__(self, features: int = 64) -> torch.Tensor:
+    def __init__(self, features: int = 64):
         super().__init__()
 
         self.model = nn.Sequential(
@@ -36,7 +36,7 @@ class Discriminator(nn.Module):
                       stride=1, padding=1)
         )
 
-    def forward(self, x: torch.Tensor):
+    def forward(self, x: torch.Tensor) -> torch.Tensor:
         x = self.model(x)
         x = F.avg_pool2d(x, x.size()[2:])
         x = torch.flatten(x, 1)
@@ -45,8 +45,7 @@ class Discriminator(nn.Module):
 
 # ----------------------- Класс Generator для CycleGAN -----------------------
 class Generator(nn.Module):
-    def __init__(self, in_features: int = 3,
-                 features: int = 64) -> torch.Tensor:
+    def __init__(self, in_features: int = 3, features: int = 64):
         super().__init__()
 
         self.model = nn.Sequential(
@@ -92,5 +91,5 @@ class Generator(nn.Module):
             nn.Tanh()
         )
 
-    def forward(self, x: torch.Tensor):
+    def forward(self, x: torch.Tensor) -> torch.Tensor:
         return self.model(x)

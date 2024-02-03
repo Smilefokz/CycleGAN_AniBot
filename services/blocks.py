@@ -4,7 +4,7 @@ import torch.nn as nn
 
 # Класс ResidualBlock для генератора:
 class ResidualBlock(nn.Module):
-    def __init__(self, features: int) -> torch.Tensor:
+    def __init__(self, features: int):
         super().__init__()
 
         self.block = nn.Sequential(
@@ -19,5 +19,5 @@ class ResidualBlock(nn.Module):
             nn.InstanceNorm2d(features)
         )
 
-    def forward(self, x: torch.Tensor):
+    def forward(self, x: torch.Tensor) -> torch.Tensor:
         return x + self.block(x)
