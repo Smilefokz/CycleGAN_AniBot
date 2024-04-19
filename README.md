@@ -91,7 +91,7 @@
 - запустить файл bot.py;
 - желание проделать данные шаги)
   
-На данный момент Анибот поселился на сервере Selectel, а в Телеграме емо можно будет найти по ссылке [https://t.me/FokzFirstBestBot](https://t.me/FokzFirstBestBot).
+В Телеграме его можно будет найти по ссылке [https://t.me/FokzFirstBestBot](https://t.me/FokzFirstBestBot).
 
 ## Структура проекта:
 
